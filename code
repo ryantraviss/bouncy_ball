@@ -1,0 +1,61 @@
+float CircleX; 
+
+float CircleY; 
+
+float yspeed = random(-2,2); 
+
+float xspeed = random(-2,2); 
+
+float size = 50; 
+
+  
+
+void setup(){ 
+
+  size(500,500); 
+
+  CircleX = width/2; 
+
+  CircleY = height/2; 
+
+  fill(random(255),random(255),random(255)); 
+
+} 
+
+  
+
+void draw(){ 
+
+  background(200); 
+
+  ellipse(CircleX,CircleY,size,size); 
+
+  CircleX += xspeed; 
+
+  CircleY += yspeed; 
+
+  if (CircleY < 0 || CircleY > height){ 
+
+    yspeed*=random(-1.4,-1); 
+
+    yspeed = constrain(yspeed, -5,5); 
+
+    fill(random(255),random(255),random(255)); 
+
+    size--; 
+
+} 
+
+  if (CircleX < 0 || CircleX > height){ 
+
+  xspeed*=random(-1.4,-1); 
+
+  xspeed = constrain(xspeed, -5,5); 
+
+  fill(random(255),random(255),random(255)); 
+
+  size--; 
+
+} 
+
+} 
